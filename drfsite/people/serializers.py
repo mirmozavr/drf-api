@@ -5,5 +5,4 @@ from .models import People
 class PeopleSerializer(serializers.ModelSerializer):
     class Meta:
         model = People
-        fields = ("title", "cat_id")
-
+        fields = "__all__"

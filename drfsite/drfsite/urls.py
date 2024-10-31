@@ -17,9 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from people.views import PeopleAPIView
+from people.views import PeopleAPIListView, PeopleAPIUpdateView, PeopleAPIDetailView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("api/v1/peoplelist/", PeopleAPIView.as_view())
+    path("api/v1/peoplelist/", PeopleAPIListView.as_view()),
+    path("api/v1/peoplelist/<int:pk>/", PeopleAPIUpdateView.as_view()),
+    path("api/v1/people/<int:pk>/", PeopleAPIDetailView.as_view()),
 ]

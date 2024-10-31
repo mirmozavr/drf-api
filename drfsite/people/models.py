@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 
 class People(models.Model):
     title = models.CharField(max_length=255)
@@ -13,6 +11,7 @@ class People(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class Category(models.Model):
     name = models.CharField(max_length=100, db_index=True)
